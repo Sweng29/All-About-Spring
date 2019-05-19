@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Load Properties file -->
+    <context:property-placeholder location="classpath:application.properties"></context:property-placeholder>
 
     <bean id="fortuneService" class="com.mant.is.daoimpl.HappyfortueService"></bean>
 
+    <!-- Constructor based D.I -->
     <bean id="baseballCoach" class="com.mant.is.daoimpl.BaseballCoach">
         <constructor-arg ref="fortuneService"></constructor-arg>
     </bean>
 
+    <!-- Setter based D.I -->
     <bean id="trackCoach" class="com.mant.is.daoimpl.TrackCoach">
         <property name="fortuneService" ref="fortuneService"></property>
     </bean>
 
+    <!-- Litral based D.I - Hard coded values -->
     <bean id="cricketCoach" class="com.mant.is.daoimpl.CricketCoach">
         <property name="emailAddress" value="khosokashif@gmail.com"></property>
         <property name="teamName" value="Mant.is TECH"></property>
+    </bean>
+
+
+    <!-- Load properties file and then inject values from properties file -->
+    <bean id="cricketCoachProperties" class="com.mant.is.daoimpl.CricketCoach">
+        <property name="emailAddress" value="${emailAddress}"></property>
+        <property name="teamName" value="${teamName}"></property>
     </bean>
 
 </beans>

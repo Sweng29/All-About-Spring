@@ -30,8 +30,14 @@ public class SpringpracticeApplication {
         // LITERAL VALUES D.I
         System.out.println("============= LITERAL VALUES BASED D.I ========================");
         CricketCoach cricketCoach = (CricketCoach) applicationContext.getBean("cricketCoach");
-        System.out.println(cricketCoach.getCoachMessage());
-        System.out.println(cricketCoach.getDailyfortune());
+        System.out.println(cricketCoach.getEmailAddress());
+        System.out.println(cricketCoach.getTeamName());
+
+        // Properties file based D.I
+        System.out.println("============= PROPERTY FILE VALUES BASED D.I ========================");
+        CricketCoach cricketCoachProperties = (CricketCoach) applicationContext.getBean("cricketCoachProperties");
+        System.out.println(cricketCoachProperties.getEmailAddress());
+        System.out.println(cricketCoachProperties.getTeamName());
     }
 
 }
