@@ -2,6 +2,7 @@ package com.mant.is;
 
 import com.mant.is.daoimpl.BaseballCoach;
 import com.mant.is.daoimpl.CricketCoach;
+import com.mant.is.daoimpl.FootballCoach;
 import com.mant.is.daoimpl.TrackCoach;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -38,6 +39,13 @@ public class SpringpracticeApplication {
         CricketCoach cricketCoachProperties = (CricketCoach) applicationContext.getBean("cricketCoachProperties");
         System.out.println(cricketCoachProperties.getEmailAddress());
         System.out.println(cricketCoachProperties.getTeamName());
+
+        // Activity practice for randomly generated fortunes
+        System.out.println("============= ACTIVITY PRACTICE FOR RANDOMLY GENERATED FORTUNES ========================");
+        FootballCoach footballCoach = (FootballCoach) applicationContext.getBean("footballCoach");
+        System.out.println(footballCoach.getCoachMessage());
+        System.out.println(footballCoach.getDailyfortune());
+
     }
 
 }

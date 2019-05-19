@@ -32,4 +32,10 @@
         <property name="teamName" value="${teamName}"></property>
     </bean>
 
+    <!-- Activity Practice -->
+    <bean id="sadFortuneService" class="com.mant.is.daoimpl.SadFortuneService"></bean>
+    <bean id="footballCoach" class="com.mant.is.daoimpl.FootballCoach">
+        <constructor-arg ref="sadFortuneService"></constructor-arg>
+    </bean>
+
 </beans>
