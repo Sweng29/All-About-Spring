@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="fortuneService" class="com.mant.is.daoimpl.HappyfortueService"></bean>
+
+    <bean id="baseballCoach" class="com.mant.is.daoimpl.BaseballCoach">
+        <constructor-arg ref="fortuneService"></constructor-arg>
+    </bean>
+
+    <bean id="trackCoach" class="com.mant.is.daoimpl.TrackCoach">
+        <property name="fortuneService" ref="fortuneService"></property>
+    </bean>
+
+    <bean id="cricketCoach" class="com.mant.is.daoimpl.CricketCoach">
+        <property name="emailAddress" value="khosokashif@gmail.com"></property>
+        <property name="teamName" value="Mant.is TECH"></property>
+    </bean>
+
+</beans>

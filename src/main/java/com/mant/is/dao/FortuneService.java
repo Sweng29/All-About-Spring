@@ -1,6 +1,6 @@
 package com.mant.is.dao;
 
-public interface FortuneDAO {
+public interface FortuneService {
 
     public String getFortune();
 }
