@@ -17,6 +17,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 *   We will look two bean scopes here,
 *   1. Singleton
 *   2. Prototype
+*
+*   Bean Life cycle methods :
+*    1. init-method
+*    2. destory-method
+*
+*    NOTE. for prototype beans scope the destory method does not get called spring container just create
+*    objects and manage for different things except destroy method.
+*    So user needs to clean it's code.
+*
 * */
 public class BeanScopesApplication {
 
