@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean scope example for singleton by deafult scope is always set to singleton by spring -->
+    <bean id="cricketCoach" class="com.mant.is.daoimpl.CricketCoach"></bean>
+
+    <!-- Bean scope example for prototype we can define it by using scope attribute in bean tag -->
+    <bean id="baseballCoach" class="com.mant.is.daoimpl.BaseballCoach" scope="prototype">
+        <constructor-arg ref="fortuneService"></constructor-arg>
+    </bean>
+
+    <bean id="fortuneService" class="com.mant.is.daoimpl.SadFortuneService"></bean>
+
+    <!--Bean lifecycle example for init-method and destroy method -->
+    <bean id="baseballCoachBeanLifeCycle" class="com.mant.is.daoimpl.BaseballCoach" init-method="getInitialValues"
+          destroy-method="destroyValues">
+        <constructor-arg ref="fortuneService"></constructor-arg>
+    </bean>
+
+</beans>

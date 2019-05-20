@@ -21,4 +21,14 @@ public class BaseballCoach implements Coach {
     public String getDailyfortune() {
         return fortuneService.getFortune();
     }
+
+    public String getInitialValues() {
+        System.out.println("Bean lifecyle init-method called.");
+        return "Bean lifecyle init-method called.";
+    }
+
+    public String destroyValues() {
+        System.out.println("Bean life cycle Destroy method called.");
+        return "Bean life cycle Destroy method called.";
+    }
 }
