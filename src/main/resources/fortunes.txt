@@ -1,0 +1,5 @@
+Hello! this is the first fortune
+Hello this is the 2nd fortune
+Hello this is the 3rd fortune
+Hello this is the 4th fortune
+Hello this is the 5th fortune

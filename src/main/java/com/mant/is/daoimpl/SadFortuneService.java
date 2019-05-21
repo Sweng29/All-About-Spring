@@ -1,6 +1,7 @@
 package com.mant.is.daoimpl;
 
 import com.mant.is.dao.FortuneService;
+import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
@@ -11,6 +12,7 @@ import java.util.Random;
 *  GENERATE RANDOM FORTUNE STRINGS FROM AN ARRAY
 *
 * */
+@Component
 public class SadFortuneService implements FortuneService {
 
     private final String[] sadFortunes = new String[]
