@@ -2,7 +2,9 @@ package com.mant.is.daoimpl;
 
 import com.mant.is.dao.Coach;
 import com.mant.is.dao.FortuneService;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BaseballCoach implements Coach {
 
     private FortuneService fortuneService;
